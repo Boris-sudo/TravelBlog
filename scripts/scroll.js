@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let scrollInterval = null;
     let lastScrollTime = Date.now();
     let wasScrolled = false;
+    let wasNaturalScrolled = false;
 
     const stopVelocity = () => {
         const deltaTime = Date.now() - lastScrollTime;
@@ -140,7 +141,12 @@ document.addEventListener('DOMContentLoaded', () => {
     /* smooth scroll on wheel events */
     window.addEventListener('wheel', (event) => {
         event.preventDefault();
-        if (asideMenuState) return;
+        if (asideMenuState || wasNaturalScrolled) return;
+        if (!wasScrolled) {
+            // removing parallax image div
+            const div = document.querySelector('div.parallaxImage');
+            div.style.display = 'none';
+        }
         wasScrolled = true;
         const delta = Math.max(-1e9, Math.min(1e9, event.deltaY));
         const deltaTime = Date.now() - lastScrollTime;
@@ -155,6 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
     /* scroll parallax images on scroll event */
     window.addEventListener('scroll', () => {
         if (asideMenuState) event.preventDefault();
+        if (!wasNaturalScrolled) {
+            parallaxImages.item(1).style.display = 'none';
+        }
+        wasNaturalScrolled = true;
         parallaxImages.forEach((img, index) => {
             const container = img.parentElement;
             const height = container.getBoundingClientRect().height + window.innerHeight;
@@ -163,9 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const delta = img.getBoundingClientRect().height - container.getBoundingClientRect().height;
             const translate = percent * delta;
 
-            img.animate({
-                transform: `translate3d(0, ${translate}px, 0)`,
-            }, {duration: 0, fill: 'forwards'})
+            if (index !== 1)
+                img.animate({
+                    transform: `translate3d(0, ${translate}px, 0)`,
+                }, {duration: 0, fill: 'forwards'})
         });
     }, {passive: !1});
 });

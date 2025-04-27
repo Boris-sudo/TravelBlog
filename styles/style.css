@@ -1081,6 +1081,17 @@ img[parallaxImage="true"] {
     object-position: center;
 }
 
+div:is(.parallaxImage) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position:   center;
+    background-repeat:     no-repeat;
+    background-size:       cover;
+}
+
 @keyframes menu-icon-appear {
     to {
         padding: 15px 16px;
