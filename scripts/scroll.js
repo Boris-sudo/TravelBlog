@@ -57,12 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const interactHeader = (scrollY) => {
         if (scrollY < -400) {
-            header_title.style.fontSize = '1.75em';
+            header_title.classList.add('small');
             aside.style.top = '80px';
             aside.style.height = 'calc(100vh - 80px)';
             header.style.height = '80px';
         } else {
-            header_title.style.fontSize = '2.25em';
+            header_title.classList.remove('small');
             aside.style.top = '100px';
             aside.style.height = 'calc(100vh - 100px)';
             header.style.height = '100px';

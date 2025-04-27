@@ -13,6 +13,7 @@
 }
 
 html {
+    width: 100vw;
     height:     auto;
     scroll-behavior: auto;
 }
@@ -22,6 +23,7 @@ textarea {
 }
 
 body {
+    min-width: 100vw;
     height:     auto;
     min-height: 100vh;
     overflow-x: hidden;
