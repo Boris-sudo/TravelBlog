@@ -196,12 +196,13 @@ aside {
             padding: 0 4rem;
 
             a {
+                --translate: min(-500px, -100%);
                 width: 100%;
                 font-family: var(--ff-playfair);
                 font-size: 30px;
                 font-weight: 600;
                 transition: color var(--slow-transition-time), transform var(--slow-transition-time) var(--delay);
-                transform: translateX(-100%);
+                transform: translateX(var(--translate));
 
                 &:hover {
                     color: var(--text-secondary);

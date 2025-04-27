@@ -33,7 +33,7 @@ function hideAsideMenu() {
     const aside = document.querySelector('aside');
 
     aside.querySelectorAll('a').forEach((item) => {
-        item.style.transform = 'translateX(-100%)';
+        item.style.transform = 'translateX(var(--translate))';
     });
 
     setTimeout(() => {
