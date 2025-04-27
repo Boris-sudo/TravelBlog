@@ -183,6 +183,9 @@ aside {
         transition:      transform 0.5s ease-in-out;
         transform:       translateY(-100%);
 
+        @media screen and (max-width: 500px) {
+            width: 100%;
+        }
 
         &:nth-child(1) {
             border-right: 1px solid rgba(from var(--background-accent) r g b / .5);
@@ -208,6 +211,10 @@ aside {
 
         &:nth-child(2) {
             transition-delay: .2s;
+
+            @media screen and (max-width: 500px) {
+                display: none;
+            }
         }
 
         &.show {

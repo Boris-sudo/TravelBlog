@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {passive: !1});
     /* scroll parallax images on scroll event */
     window.addEventListener('scroll', () => {
+        if (asideMenuState) event.preventDefault();
         parallaxImages.forEach((img, index) => {
             const container = img.parentElement;
             const height = container.getBoundingClientRect().height + window.innerHeight;
@@ -166,5 +167,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 transform: `translate3d(0, ${translate}px, 0)`,
             }, {duration: 0, fill: 'forwards'})
         });
-    })
+    }, {passive: !1});
 });
