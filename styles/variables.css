@@ -1,0 +1,49 @@
+:root {
+    --ff-lato:    "Lato";
+    --ff-roboto:  "Roboto";
+    --ff-jost:    "Jost";
+    --ff-inter:   "Inter";
+    --ff-jura:    "Jura";
+    --ff-poppins: "Poppins";
+    --ff-pacifico: "Pacifico";
+    --ff-playfair: "Playfair Display";
+}
+
+:root {
+    /* MAIN COLORS */
+    --interaction-primary:   rgba(15, 98, 254, 1);
+    --interaction-secondary: rgba(15, 98, 254, 1);
+
+    --background-primary:    rgba(20, 20, 22, 1);
+    --background-secondary:  rgba(38, 38, 38, 1);
+    --background-neutral:    rgba(82, 82, 82, 1);
+    --background-header:     var(--background-secondary);
+    --background-accent:     rgba(255, 255, 255, 1);
+
+    --text-primary:          rgba(255, 255, 255, 1);
+    --text-secondary:        rgb(149, 157, 168);
+    --text-accent:           rgb(182, 182, 182);
+
+    --disable:               rgba(198, 198, 198, 1);
+    --border:                rgba(224, 224, 224, 1);
+    --border-header:         var(--background-neutral);
+    /* --border-header:         rgba(255, 255, 255, .5); */
+    --transparent:           rgba(255, 255, 255, 0);
+}
+
+:root { /* sizes */
+    --slide-bar-max: 300px;
+    --header-height: 80px;
+}
+
+:root { /* border radius */
+    --br-100: 999px;
+    --br-32:  32px;
+    --br-16:  16px;
+    --br-8:   8px;
+}
+
+:root { /* transition duration times */
+    --slow-transition-time: .6s;
+    --fast-transition-time: .3s;
+}

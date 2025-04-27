@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Blog</title>
+    <base href=".">
+    <!-- i icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- ./ i icons -->
+
+    <!-- echarts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <!-- ./ echarts -->
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+    <!-- ./ fonts -->
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- ./ styles -->
+
+    <!-- scripts -->
+    <script type="module" src="scripts/aside.js"></script>
+    <script type="module" src="scripts/scroll.js"></script>
+    <script type="module" src="scripts/category-choosing.js"></script>
+    <script type="module" src="scripts/charts.js"></script>
+    <script type="module" src="scripts/cards-generator.js"></script>
+    <script>
+        history.scrollRestoration = "manual"
+    </script>
+    <!-- ./ scripts -->
+</head>
+<body>
+
+<aside>
+    <div class="container">
+        <a style="--delay: .1s" href="#home">Home</a>
+        <a style="--delay: .3s" href="#destinations">Destinations</a>
+        <a style="--delay: .6s" href="#statistics">Statistics</a>
+        <a style="--delay: .8s" href="#contact">Contact</a>
+    </div>
+    <div class="container"></div>
+</aside>
+
+<header>
+    <h1 class="title">Travel Blog</h1>
+
+    <div class="icons">
+        <p class="lang">Русский</p>
+
+        <div class="menu-icon">
+            <p class="menu-icon-text">menu</p>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="home" class="banner">
+        <div class="container">
+            <h1 class="title">
+                <span class="word">
+                    <span class="char" style="">М</span><span class="char" style="">о</span><span class="char" style="">й</span>
+                </span>
+                <span class="word">
+                    <span class="char" style="">Б</span><span class="char" style="">л</span><span class="char" style="">о</span><span class="char" style="">г</span>
+                </span>
+                <span class="word">
+                    <span class="char" style="">п</span><span class="char" style="">р</span><span class="char" style="">о</span>
+                </span>
+                <br>
+                <span class="word">
+                    <span class="char" style="">П</span><span class="char" style="">у</span><span class="char" style="">т</span><span class="char" style="">е</span><span class="char" style="">ш</span><span class="char" style="">е</span><span class="char" style="">с</span><span class="char" style="">т</span><span class="char" style="">в</span><span class="char" style="">и</span><span class="char" style="">я</span>
+                </span>
+            </h1>
+
+            <div class="info">
+                <div class="text">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M6 6v6a3 3 0 0 0 3 3h10l-4 -4m0 8l4 -4"/>
+                        </svg>
+                    </div>
+                    <p>Подписывайтесь на мой блог и оставайтесь в курсе всех новостей про мои путешествия</p>
+                </div>
+                <div class="info-image">
+                    <img src="images/info.avif" alt="" draggable="false">
+                </div>
+            </div>
+        </div>
+
+        <div class="image">
+            <img parallaxImage="true" src="images/bg.webp" alt="" draggable="false">
+        </div>
+    </section>
+
+    <section class="blog-about">
+        <div class="container">
+            <div class="info">
+                <p>Notre mission: réaliser des projets en pierre naturelle complexes et uniques grâce au savoir-faire et à la technologie.</p>
+                <button></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-content">
+        <img style="height: 100vh;" parallaxImage="true" src="images/blog-content.avif" alt="" draggable="false">
+        <div class="shadow"></div>
+        <div class="content">
+            <p class="title">"The real voyage of discovery consists not in seeking new landscapes, but in having new eyes."</p>
+            <p class="text"> — Marcel Proust </p>
+        </div>
+    </section>
+
+    <section id="destinations" class="blog-grid">
+        <div class="header">
+            <p class="title">Latest travels</p>
+            <div class="categories">
+                <div travelCategory="All" class="active">All</div>
+                <div travelCategory="Russia">Russia</div>
+                <div travelCategory="French">French</div>
+                <div travelCategory="Germany">Germany</div>
+            </div>
+        </div>
+
+        <div id="travelCardsGrid" class="grid">
+            <div class="card">
+                <div class="header-image">
+                    <img src="images/travel-cards/1.jpg" alt="Santorini Sunset">
+                    <div>
+                        Venice, Italy
+                    </div>
+                </div>
+                <div class="content">
+                    <div>
+                        <span>
+                            <i class="ri-calendar-line mr-1"></i>
+                            April 2, 2025
+                        </span>
+                        <span>•</span>
+                        <span>
+                            <i class="ri-time-line mr-1"></i>
+                            7 min read
+                        </span>
+                    </div>
+                    <h3>Getting Lost in the Canals of Venice</h3>
+                    <p>Exploring the winding waterways and hidden alleys of Venice, discovering local cuisine and authentic Italian experiences away from the tourist crowds.</p>
+                    <div>
+                        <a href="#">
+                            Read More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header-image">
+                    <img src="images/travel-cards/2.jpg" alt="Santorini Sunset">
+                    <div>
+                        Santorini, Greece
+                    </div>
+                </div>
+                <div class="content">
+                    <div>
+                        <span>
+                            <i class="ri-calendar-line mr-1"></i>
+                            April 2, 2025
+                        </span>
+                        <span>•</span>
+                        <span>
+                            <i class="ri-time-line mr-1"></i>
+                            7 min read
+                        </span>
+                    </div>
+                    <h3>Chasing Sunsets in Santorini</h3>
+                    <p>The ultimate guide to finding the best sunset viewing spots in Santorini, along with recommendations for local wine tasting and authentic Greek tavernas.</p>
+                    <div>
+                        <a href="#">
+                            Read More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header-image">
+                    <img src="images/travel-cards/3.jpg" alt="Santorini Sunset">
+                    <div>
+                        Barcelona, Spain
+                    </div>
+                </div>
+                <div class="content">
+                    <div>
+                        <span>
+                            <i class="ri-calendar-line mr-1"></i>
+                            April 2, 2025
+                        </span>
+                        <span>•</span>
+                        <span>
+                            <i class="ri-time-line mr-1"></i>
+                            7 min read
+                        </span>
+                    </div>
+                    <h3>Gaudi's Barcelona: An Architectural Tour</h3>
+                    <p>Exploring the magnificent works of Antoni Gaudi throughout Barcelona, from the iconic Sagrada Familia to the whimsical Park Güell and beyond.</p>
+                    <div>
+                        <a href="#">
+                            Read More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header-image">
+                    <img src="images/travel-cards/4.jpg" alt="Santorini Sunset">
+                    <div>
+                        Paris, France
+                    </div>
+                </div>
+                <div class="content">
+                    <div>
+                        <span>
+                            <i class="ri-calendar-line mr-1"></i>
+                            April 2, 2025
+                        </span>
+                        <span>•</span>
+                        <span>
+                            <i class="ri-time-line mr-1"></i>
+                            7 min read
+                        </span>
+                    </div>
+                    <h3>Paris in Spring: Beyond the Tourist Trail</h3>
+                    <p>Discovering the hidden gems of Paris during the spring season, from secret gardens and local markets to charming neighborhoods off the beaten path.</p>
+                    <div>
+                        <a href="#">
+                            Read More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header-image">
+                    <img src="images/travel-cards/5.jpg" alt="Santorini Sunset">
+                    <div>
+                        Swiss Alps, Switzerland
+                    </div>
+                </div>
+                <div class="content">
+                    <div>
+                        <span>
+                            <i class="ri-calendar-line mr-1"></i>
+                            April 2, 2025
+                        </span>
+                        <span>•</span>
+                        <span>
+                            <i class="ri-time-line mr-1"></i>
+                            7 min read
+                        </span>
+                    </div>
+                    <h3>Hiking the Swiss Alps: A Beginner's Guide</h3>
+                    <p>Everything you need to know about planning your first hiking trip in the Swiss Alps, including trail recommendations, gear essentials, and accommodation options.</p>
+                    <div>
+                        <a href="#">
+                            Read More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header-image">
+                    <img src="images/travel-cards/6.jpg" alt="Santorini Sunset">
+                    <div>
+                        Amsterdam, Netherlands
+                    </div>
+                </div>
+                <div class="content">
+                    <div>
+                        <span>
+                            <i class="ri-calendar-line mr-1"></i>
+                            April 2, 2025
+                        </span>
+                        <span>•</span>
+                        <span>
+                            <i class="ri-time-line mr-1"></i>
+                            7 min read
+                        </span>
+                    </div>
+                    <h3>Cycling Through Amsterdam: The Local Experience</h3>
+                    <p>Exploring Amsterdam like a local on two wheels, including the best cycling routes, hidden gems, and tips for navigating the city's famous bike culture safely.</p>
+                    <div>
+                        <a href="#">
+                            Read More
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="travelGenButton">
+            <i class="ri-refresh-line mr-2"></i>
+            Load More Stories
+        </button>
+    </section>
+
+    <section id="statistics" class="blog-stats">
+        <div class="container">
+            <div class="header center">
+                <h2 class="title">Travel Statistics</h2>
+                <p class="text">Tracking my journey around the world through numbers and visualizations</p>
+            </div>
+
+            <div>
+                <!-- Countries Visited Chart -->
+                <div>
+                    <h3>Countries Visited by Continent</h3>
+                    <div id="countriesChart"></div>
+                </div>
+                <!-- Travel Timeline Chart -->
+                <div>
+                    <h3>Travel Timeline (2023-2025)</h3>
+                    <div id="timelineChart"></div>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>
+                        <i class="ri-earth-line ri-xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-1">12</h4>
+                    <p class="text-gray-600">Countries Visited</p>
+                </div>
+                <div>
+                    <div>
+                        <i class="ri-map-pin-line ri-xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-1">47</h4>
+                    <p class="text-gray-600">Cities Explored</p>
+                </div>
+                <div>
+                    <div>
+                        <i class="ri-flight-takeoff-line ri-xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-1">32</h4>
+                    <p class="text-gray-600">Flights Taken</p>
+                </div>
+                <div>
+                    <div>
+                        <i class="ri-hotel-line ri-xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-1">89</h4>
+                    <p class="text-gray-600">Nights in Hotels</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="blog-contact">
+        <div class="container">
+            <div class="header center">
+                <h2 class="title">Get in Touch</h2>
+                <p class="text">Have a question about a destination? Want to collaborate? Or simply want to say hello? I'd love to hear from you.</p>
+            </div>
+            <div class="grid">
+                <form>
+                    <div>
+                        <label>
+                            <p>Name</p>
+                            <input type="text"/>
+                        </label>
+                        <label>
+                            <p>Email</p>
+                            <input type="text"/>
+                        </label>
+                    </div>
+                    <label>
+                        <p>Subject</p>
+                        <input type="text"/>
+                    </label>
+                    <label>
+                        <p>Message</p>
+                        <textarea></textarea>
+                    </label>
+                    <button class="px-8 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors shadow-md whitespace-nowrap">
+                        Send Message
+                    </button>
+                </form>
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-lg h-full">
+                        <h3>Connect With Me</h3>
+                        <div class="social-links">
+                            <div>
+                                <div>
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>hello@darya-travel.com</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <i class="ri-instagram-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4>Instagram</h4>
+                                    <p>@darya.traveling</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <i class="ri-youtube-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4>YouTube</h4>
+                                    <p>DaryaTraveling</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h4>Currently Exploring</h4>
+                            <p>As of April 2025, I'm traveling through the ancient temples and vibrant streets of Japan, following the cherry blossom trail northward.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div>
+            <div style="gap: 10px;">
+                <div class="logo">Travel blog</div>
+                <p class="info">Documenting my travels around the world, one adventure at a time. Join me on this journey of discovery and exploration.</p>
+                <div class="row">
+                    <a href="#">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="#">
+                        <i class="ri-facebook-line"></i>
+                    </a>
+                    <a href="#">
+                        <i class="ri-twitter-x-line"></i>
+                    </a>
+                    <a href="#">
+                        <i class="ri-pinterest-line"></i>
+                    </a>
+                </div>
+            </div>
+            <div style="gap: 10px;">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Destinations</a>
+                    </li>
+                    <li>
+                        <a href="#destinations">Destinations</a>
+                    </li>
+                    <li>
+                        <a href="#statistics">Statistics</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="gap: 10px;">
+                <h3>Popular Categories</h3>
+                <ul>
+                    <li>
+                        <a href="#">Adventure Travel</a>
+                    </li>
+                    <li>
+                        <a href="#">Food & Cuisine</a>
+                    </li>
+                    <li>
+                        <a href="#">Cultural Experiences</a>
+                    </li>
+                    <li>
+                        <a href="#">City Guides</a>
+                    </li>
+                    <li>
+                        <a href="#">Travel Tips</a>
+                    </li>
+                    <li>
+                        <a href="#">Photography Tips</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="gap: 10px;">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>
+                        <i class="ri-mail-line mt-1 mr-3 text-primary"></i>
+                        <span>hello@wanderlustjournal.com</span>
+                    </li>
+                    <li>
+                        <i class="ri-map-pin-line mt-1 mr-3 text-primary"></i>
+                        <span>London, United Kingdom<br>(When not traveling)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <p>© 2025 Travel Blog. All rights reserved.</p>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+    <!-- Back to Top Button -->
+    <button id="backToTop">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+</footer>
+
+</body>
+</html>
