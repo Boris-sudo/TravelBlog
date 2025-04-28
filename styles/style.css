@@ -547,8 +547,93 @@ main {
     }
 
     .blog-about {
-        height:           500px;
+        padding: 2em 6em;
         background-color: var(--background-primary);
+
+        @media screen and (max-width: 800px) {
+            padding: 2em;
+        }
+
+        .container {
+            width: 100%;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            
+            @media screen and (max-width: 1000px) {
+                grid-template-columns: repeat(2, 1fr);
+
+                & > div:nth-child(n+3) {
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: 650px) {
+                grid-template-columns: repeat(1, 1fr);
+                & > div:nth-child(n+3) {
+                    display: flex;
+                }
+            }
+
+            & > div {
+                width: 100%;
+                padding: 20px 20px;
+                border-radius: var(--br-16);
+                background-color: var(--background-secondary);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .head {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 20px;
+
+                    .icon {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border-radius: var(--br-100);
+                        background-color: var(--text-secondary);
+                        color: var(--background-primary);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 25px;
+                        font-weight: 600;
+                    }
+
+                    & > div:not(:is(.icon)) {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        h4 {
+                            font-size: 20px;
+                            font-family: var(--ff-playfair);
+                            font-weight: 600;
+                        }
+                        p {
+                            font-style: italic;
+                            font-size: 16px;
+                            font-weight: 300;
+                            color: var(--text-accent);
+                        }
+                    }
+                }
+
+                & > p {
+                    color: var(--text-accent);
+                    font-size: 18px;
+                    font-weight: 500;
+                    font-style: italic;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 5;
+                    overflow: hidden;
+                }
+            }
+        }
     }
 
     .blog-content {
